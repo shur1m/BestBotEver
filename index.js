@@ -10,12 +10,13 @@ const command = require('./command.js');
 const privateMessage = require('./private-message.js');
 
 //initializing bot
-client.on('ready', () => {
+client.on('ready', async () => {
     console.log('the client is ready');
     
     const baseFile = 'command-base.js';
     const commandBase = require(`./commands/${baseFile}`);
 
+    //reading files from commands folder
     const readCommands = dir => {
         const files = fs.readdirSync(path.join(__dirname, dir));
         for (const file of files){
