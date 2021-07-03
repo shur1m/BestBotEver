@@ -39,6 +39,8 @@ client.on('ready', async () => {
 
     //deleting all messages in channel
     command(client, ['cc', 'clearChannel'], (message) => {
+        if (message.channel.type == 'dm') { return; } 
+        
         if (message.member.hasPermission('MANAGE_MESSAGES')){
             message.channel.messages.fetch().then((results) => {
                 message.channel.bulkDelete(results);
