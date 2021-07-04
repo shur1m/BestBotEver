@@ -1,6 +1,6 @@
 module.exports = {
     commands: ['schedule', 'sched'],
-    expectedArgs: '<seconds> <message>',
+    expectedArgs: '<date/time> <message>',
     minArgs: 2,
     maxArgs: null,
     callback: (message, arguments, text) => {
